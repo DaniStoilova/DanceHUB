@@ -26,6 +26,12 @@ public class UserEntity extends BaseEntity {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List<RoleEntity> roles;
 
+    @ManyToOne
+    private DanceClasses danceClasses;
+
+    @ManyToOne
+    private Scheduling schedule;
+
 
     public UserEntity() {
     }
@@ -68,5 +74,13 @@ public class UserEntity extends BaseEntity {
 
     public void setRoles(List<RoleEntity> roles) {
         this.roles = roles;
+    }
+
+    public void setDanceClasses(DanceClasses danceClasses) {
+        this.danceClasses = danceClasses;
+    }
+
+    public DanceClasses getDanceClasses() {
+        return danceClasses;
     }
 }
